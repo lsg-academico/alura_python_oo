@@ -7,13 +7,22 @@ class Conta:
         self.__saldo = saldo
         self.__limite = limite
 
-    def extrato(self):
-        print(f"Saldo {self.saldo} do titular {self.titular}")
+    def verExtrato(self):
+        print(f"Saldo {self.__saldo} do titular {self.__titular}")
 
-    def deposita(self, valor):
-        self.saldo += valor
+    def depositar(self, valor):
+        self.__saldo += valor
 
-    def saca(self, valor):
-        self.saldo -= valor
+    def sacar(self, valor):
+        self.__saldo -= valor
 
-    #conta = Conta(123, "Lucas", 0.0, 1000.0);
+    def transferir(self, valor, destino):
+        self.sacar(valor)
+        destino.depositar(valor)
+    
+    #def testarInadimplencia(self, cliente):
+        
+
+#from data import Data
+#conta = Conta(123, "Lucas", 0.0, 1000.0)
+#conta2 = Conta(321, "Maryana", 0.0, 1000.0)
