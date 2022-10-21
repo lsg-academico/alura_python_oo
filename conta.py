@@ -1,22 +1,30 @@
-from wsgiref.validate import validator
-
-
 class Conta:
 
     def __init__(self, numero, titular, saldo, limite):
         print("construindo objeto... {}".format(self)) #mostra o endereço do objeto
-        self.numero = numero         #acessando o objeto
-        self.titular = titular
-        self.saldo = saldo
-        self.limite = limite
+        self.__numero = numero         #acessando o objeto
+        self.__titular = titular       # esses __ indicam q os atributos são privados, não podendo ser mais acessados no console, apenas através dos métodos da classe
+        self.__saldo = saldo
+        self.__limite = limite
 
     def extrato(self):
-        print("Saldo {} do titular {}".format(self.saldo, self.titular))
+        print("Saldo {} do titular {}".format(self.__saldo, self.__titular))
 
     def deposita(self, valor):
-        self.saldo += valor
+        self.__saldo += valor
 
     def saca(self, valor):
-        self.saldo -= valor
+        self.__saldo -= valor
+
+    def transfere(self, valor, destino):
+        self.saca(valor)
+        destino.deposita(valor)
 
 
+
+
+
+
+
+# Funciona como ponteiros o negoço de referencia
+# variavel = None   - faz com q a referencia pare de apontar para algo
