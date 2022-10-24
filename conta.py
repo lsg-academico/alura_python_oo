@@ -47,11 +47,11 @@ class Conta:
     #numero
     @property
     def numero(self):
-        return self.__limite
+        return self.__numero
     
     @numero.setter
     def numero(self,numero):
-        self.__limite=numero
+        self.__numero=numero
     
     #titular
     @property
@@ -60,7 +60,7 @@ class Conta:
     
     @titular.setter
     def titular(self,titular):
-        self.__limite=titular
+        self.__titular=titular
     
     #saldo
     @property
@@ -68,7 +68,7 @@ class Conta:
         return self.__saldo
     
     @saldo.setter
-    def limite(self,saldo):
+    def saldo(self,saldo):
         self.__saldo=saldo
     
     #limite
