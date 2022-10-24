@@ -6,15 +6,31 @@ class Conta:
         self.__titular = titular
         self.__saldo = saldo
         self.__limite = limite
+        self.__codigoBanco = "001"
         
-    def getNumero(self):
+    @property    
+    def numero(self):
         return self.__numero
     
-    def getTitular(self):
+    @numero.setter
+    def numero(self, numero):
+        self.__numero = numero
+    
+    @property
+    def titular(self):
         return self.__titular
     
-    def getSaldo(self):
+    @titular.setter
+    def titular(self, titular):
+        self.__titular = titular
+    
+    @property
+    def saldo(self):
         return self.__saldo
+    
+    @saldo.setter
+    def saldo(self, saldo):
+        self.__saldo = saldo
     
     @property
     def limite(self):
@@ -23,28 +39,34 @@ class Conta:
     @limite.setter
     def limite(self, limite):
         self.__limite = limite
-    
-    def setNumero(self, numero):
-        self.__numero = numero
-    
-    def setTitular(self, titular):
-        self.__titular = titular
-    
-    #def setSaldo(self, saldo):
-    #    self.__saldo = saldo
 
     def verExtrato(self):
         print(f"Saldo {self.__saldo} do titular {self.__titular}")
 
     def depositar(self, valor):
         self.__saldo += valor
+    
+    def __podeSacar(self, valorParaSacar):
+        valorDisponivelParaSacar = self.__saldo + self.__limite
+        return valorParaSacar <= valorDisponivelParaSacar
 
     def sacar(self, valor):
-        self.__saldo -= valor
+        if(self.__podeSacar(valor)):
+            self.__saldo -= valor
+        else:
+            print(f"O valor {valor} passou o limite, pobrinho")
 
     def transferir(self, valor, destino):
         self.sacar(valor)
         destino.depositar(valor)
+    
+    @staticmethod
+    def codigoBanco():
+        return "001"
+
+    @staticmethod
+    def codigosBanco():
+        return {"BB": "001", "Caixa": "104", "Bradesco": "273"}
     
     #def testarInadimplencia(self, cliente):
         
