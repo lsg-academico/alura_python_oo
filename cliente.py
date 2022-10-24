@@ -4,9 +4,10 @@ class Cliente:
         
     @property
     def nome(self):
-        print ("chama ndo @property" nome()")
+        print ("chamando @property nome()")
         return self.__nome.title()
-        
+    
+    @nome.setter  
     def nome(self,nome):
         print("chamando setter nome()")
         self.__nome=nome

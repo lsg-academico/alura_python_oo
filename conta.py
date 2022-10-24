@@ -43,6 +43,35 @@ class Conta:
     def get_titular(self):
         return self.__titular
     
+    
+    #numero
+    @property
+    def numero(self):
+        return self.__limite
+    
+    @numero.setter
+    def numero(self,numero):
+        self.__limite=numero
+    
+    #titular
+    @property
+    def titular(self):
+        return self.__titular
+    
+    @titular.setter
+    def titular(self,titular):
+        self.__limite=titular
+    
+    #saldo
+    @property
+    def saldo(self):
+        return self.__saldo
+    
+    @saldo.setter
+    def limite(self,saldo):
+        self.__saldo=saldo
+    
+    #limite
     @property
     def limite(self):
         return self.__limite
@@ -50,3 +79,5 @@ class Conta:
     @limite.setter
     def limite(self,limite):
         self.__limite=limite
+        
+        
