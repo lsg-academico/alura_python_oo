@@ -25,8 +25,9 @@ class Conta:
         
     def deposita(self,valor):
         self.__saldo += valor
-        
-    def pode_sacar(self,valor_a_sacar):
+    
+    #função de uso interno    
+    def __pode_sacar(self,valor_a_sacar):
         valor_disponivel_a_sacar = self.__saldo+ self.__limite    
         return valor_a_sacar <= valor_disponivel_a_sacar
     
