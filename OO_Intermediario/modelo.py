@@ -18,6 +18,9 @@ class Programa:
     @nome.setter
     def nome(self,novo_nome):
         self._nome =novo_nome.title()
+        
+    def imprime(self):
+        print(f)
 
 #############################################
 class Filme (Programa):
@@ -37,14 +40,10 @@ class Serie (Programa):
             
 vingadores=Filme('vingadores - guerra infinita',2018,160)
 vingadores.dar_like()
-#print(f'{vingadores.nome} - {vingadores.ano} - {vingadores.duracao} - {vingadores.likes}')
-#print(f'Nome: {vingadores.nome} - Ano: {vingadores.ano}'
-#      f' - Temporadas: {vingadores.duracao} - Likes: {vingadores.likes}')
 
 
 atlanta=Serie('atlanta',2018,2)
 atlanta.dar_like()
-#print(f'{atlanta.nome} - {atlanta.ano} - {atlanta.temporadas} - {vingadores.likes}')
 
 filmes_e_series=[vingadores,atlanta]
 
