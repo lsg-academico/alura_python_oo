@@ -23,23 +23,35 @@ class Programa:
 
     def curtir(self):
         self.curtidas += 1
+    
+    def imprimir(self):
+        print(f"- Nome: {vingadores.nome}\n- Duracao: {vingadores.duracao}\n- Likes: {vingadores.curtidas}\n")
 
 class Filme(Programa):
     
     def __init__(self, nome, ano, duracao):
         super().__init__(nome, ano)
         self.duracao = duracao
-
+    
+    def imprimir(self):
+        print(f"- Nome: {self._nome}\n- Temporadas: {self.duracao}\n- Likes: {self.curtidas}\n")
 class Serie(Programa):
     
     def __init__(self, nome, ano, temporadas):
         super().__init__(nome, ano)
         self.temporadas = temporadas
+    
+    def imprimir(self):
+        print(f"- Nome: {self._nome}\n- Duracao: {self.temporadas}\n- Likes: {self.curtidas}\n")
 
 vingadores = Filme('vingadores guerra infinita', 2018, 160)
 vingadores.curtir()
-print(f"- Nome: {vingadores.nome}\n- Temporadas: {vingadores.ano}\n- Likes: {vingadores.curtidas}\n")
 
 friends = Serie('friends', 1994, 10)
 friends.curtir()
-print(f"- Nome: {friends.nome}\n- Temporadas: {friends.temporadas}\n- Likes: {friends.curtidas}")
+
+filmesSerires = [vingadores, friends]
+
+for programa in filmesSerires:
+    programa.imprimir()
+    
