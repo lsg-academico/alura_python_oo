@@ -17,6 +17,7 @@ class Conta:
         self.__titular=titular
         self.__saldo=saldo
         self.__limite=limite
+        self.__codigo_banco="001"
         
         #dois _ na frente do atributo, ele vira private
         
@@ -89,4 +90,8 @@ class Conta:
     def limite(self,limite):
         self.__limite=limite
         
+    @staticmethod
+    def codigos_bancos():
+        return {'BB':'001','Caixa':'104','Bradesco':'237'}
+            
         
