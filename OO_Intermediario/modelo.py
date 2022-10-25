@@ -20,7 +20,7 @@ class Programa:
         self._nome =novo_nome.title()
         
     def imprime(self):
-        print(f)
+        print(f'{self._nome} - {self.ano} - {self._likes}')
 
 #############################################
 class Filme (Programa):
@@ -40,7 +40,6 @@ class Serie (Programa):
             
 vingadores=Filme('vingadores - guerra infinita',2018,160)
 vingadores.dar_like()
-
 
 atlanta=Serie('atlanta',2018,2)
 atlanta.dar_like()
