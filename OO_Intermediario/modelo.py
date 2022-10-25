@@ -29,7 +29,7 @@ class Filme (Programa):
         self.duracao=duracao
      
     def imprime(self):
-        print(f'{self._nome} - {self.ano} - {self._duracao}- {self._likes} Likes')
+        print(f'{self._nome} - {self.ano} - {self.duracao} duracao- {self._likes} Likes')
             
 #############################################       
 class Serie (Programa):
@@ -37,6 +37,8 @@ class Serie (Programa):
         super().__init__(nome,ano)  
         self.temporadas=temporadas
     
+    def imprime(self):
+        print(f'{self._nome} - {self.ano} - {self.temporadas} temporadas- {self._likes} Likes')
 #############################################
 
             
