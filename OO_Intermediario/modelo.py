@@ -20,7 +20,7 @@ class Programa:
         self._nome =novo_nome.title()
         
     def imprime(self):
-        print(f'{self._nome} - {self.ano} - {self._likes}')
+        print(f'{self._nome} - {self.ano} - {self._likes} Likes')
 
 #############################################
 class Filme (Programa):
@@ -28,6 +28,8 @@ class Filme (Programa):
         super().__init__(nome,ano)  
         self.duracao=duracao
      
+    def imprime(self):
+        print(f'{self._nome} - {self.ano} - {self._duracao}- {self._likes} Likes')
             
 #############################################       
 class Serie (Programa):
@@ -47,5 +49,6 @@ atlanta.dar_like()
 filmes_e_series=[vingadores,atlanta]
 
 for programa in filmes_e_series:
-    detalhes = programa.duracao if hasattr(programa,'duracao') else programa.temporadas
-    print(f'{programa.nome} -{detalhes}  D - {programa.likes}')
+    programa.imprime()
+#    detalhes = programa.duracao if hasattr(programa,'duracao') else programa.temporadas
+#    print(f'{programa.nome} -{detalhes}  D - {programa.likes}')
